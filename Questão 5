@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class InverteString {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Digite uma string: ");
+        String entrada = scanner.nextLine();
+        
+        String invertida = inverterString(entrada);
+        
+        System.out.println("String invertida: " + invertida);
+        
+        scanner.close();
+    }
+    
+    public static String inverterString(String str) {
+        StringBuilder builder = new StringBuilder();
+        
+        // Itera pela string de trás para frente e adiciona cada caractere ao StringBuilder
+        for (int i = str.length() - 1; i >= 0; i--) {
+            builder.append(str.charAt(i));
+        }
+        
+        // Converte o StringBuilder de volta para uma String e a retorna
+        return builder.toString();
+    }
+}
